@@ -1,0 +1,172 @@
+/* styles/home.css */
+
+/* Section Hero */
+.action {
+    width: 30%;
+    padding: 20px;
+    background-color: white;  /* Optionnel : pour démarquer la zone */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optionnel : ombrage léger */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+    border-radius: 8px; /* Optionnel : coins arrondis */
+}
+
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 300px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.action {
+    margin-left: 20%;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 700px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.action:hover {
+    transform: translateY(-5px);
+}
+
+.action p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+
+/* Centrage général */
+.container,
+.terms
+.about-content,
+.footer-content,
+.section-header {
+    text-align: center;
+}
+
+.terms {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 300px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.terms:hover {
+    transform: translateY(-5px);
+}
+
+.terms i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.terms h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.terms p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+
+/* Responsive ajustements */
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-card {
+        width: 90%;
+    }
+    .action{
+        width: 50%;
+    }
+    .terms{
+        width: 80%;
+    }
+
+}

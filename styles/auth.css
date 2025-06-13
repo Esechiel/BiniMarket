@@ -1,0 +1,185 @@
+/* styles/auth.css */
+
+/* Container d'authentification */
+.auth-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* Onglets d'authentification */
+.auth-tabs {
+    display: flex;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.auth-tab.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+.auth-tab:hover:not(.active) {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Formulaires d'authentification */
+.auth-content {
+    padding: 30px;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.auth-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Champs de formulaire spécifiques à l'authentification */
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form .form-group-inline {
+    margin-bottom: 25px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 16px; /* Minimum 16px pour éviter le zoom sur mobile */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.phone input[type="tel"]{
+    width: 70%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 16px; /* Minimum 16px pour éviter le zoom sur mobile */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.codes{
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 16px; /* Minimum 16px pour éviter le zoom sur mobile */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+.auth-form input:focus,
+.auth-form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(93, 92, 222, 0.2);
+    outline: none;
+}
+
+.auth-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.auth-form .forgot-password {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.auth-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Validation des formulaires */
+.auth-form input.invalid {
+    border-color: var(--error-color);
+}
+
+.auth-form input.valid {
+    border-color: var(--success-color);
+}
+
+.auth-form .error-message {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Responsive design pour mobiles */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 20px 15px;
+    }
+    
+    .auth-content {
+        padding: 20px;
+    }
+    
+    .auth-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}

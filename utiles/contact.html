@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BiniMarketing - Votre Partenaire Commercial</title>
+        <link rel="stylesheet" href="styles/common.css">
+        <link rel="stylesheet" href="styles/styl.css">
+        <link rel="stylesheet" href="styles/home.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="../index.php">
+                            <i class="fas fa-store"><img src="../images/icons/petit/shop.png"/> </i>
+                            <span>BiniMarket</span>
+                        </a>
+                    </div>
+                    <div class="search-bar">
+                        <form action="../search.php" method="get">
+                            <input type="text" name="q" placeholder="Rechercher un produit, service...">
+                            <button type="submit"><i class="fas fa-search"><img src="../images/icons/petit/loupe.png"/></i></button>
+                        </form>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+
+                            <li><a href="../categories.php">Catégories</a></li>
+                            <li><a href="../add-listing.php" class="btn-primary"><i class="fas fa-plus"><img src="../images/icons/petit/icons8-plus-math-24.png"/></i> Publier</a></li>
+                            <li><a href="../messages.php"><i class="fas fa-comment"><img src="../images/icons/petit/img-chat1.png"/></i></a></li>
+                            <li><a href="../auth.php"><i class="fas fa-user"><img src="../images/icons/petit/img-user1.png"/></i></a></li>
+                        </ul>
+                    </nav>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="../categories.php">Catégories</a></li>
+                    <li><a href="../add-listing.php">Publier une annonce</a></li>
+                    <li><a href="../messages.php">Messages</a></li>
+                    <li><a href="../auth.php">Connexion / Inscription</a></li>
+                </ul>
+            </div>
+        </header>
+    
+        <main>
+            <div class="contener">
+                <div class="auth-content">
+                      <!-- Contact Section -->
+                    <section id="contact" class="page-section">
+                        <div class="section-header">
+                            <h2>Contactez-Nous</h2>
+                            <div class="about-card" style="margin-left: 25%; width: 50%;">
+                               <p>Nous sommes à votre disposition pour répondre à toutes vos questions</p>
+                            </div>
+                        </div>
+                        <div class="contact-content" id="contact">
+                            <form class="contact-form" id="contactForm" method="post" action="traitement.php">
+                                <div class="form-group">
+                                    <label for="name">Nom</label>
+                                    <input type="text" id="name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Adresse Email</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Sujet</label>
+                                    <input type="text" id="Sujet" name="Sujet">
+                                </div>
+                                <div class="form-group full">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                </div>
+                                <div class="form-group full">
+                                    <button type="submit" class="btn submit-btn"> Envoyer </button>
+                                </div>
+                            </form>
+                        </div>
+                   </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fas fa-store"><img src="../images/icons/petit/shop.png"/></i>
+                        <span>BiniMarket</span>
+                        <p>La plateforme de mini-commerce entre étudiants et résidents de Bini-Dang.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Liens utiles</h3>
+                        <ul>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="terms.html">Conditions d'utilisation</a></li>
+                            <li><a href="privacy.html">Politique de confidentialité</a></li>
+                            <li><a href="contact.html"  style="color: blue">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-envelope"><img src="../images/icons/petit/icons8-message-24.png"/></i> contact@binimarket.com</p>
+                        <p><i class="fas fa-phone"><img src="../images/icons/petit/icons8-phone-24.png"/></i> +237 6XX XXX XXX</p>
+                        <p><i class="fas fa-map-marker-alt"><img src="../images/icons/petit/icons8-marqueur-24.png"/></i> Campus de Bini-Dang</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 BiniMarket. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

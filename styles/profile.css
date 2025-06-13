@@ -1,0 +1,733 @@
+/* styles/profile.css */
+
+/* Conteneur de profil */
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* En-tête de profil */
+.profile-header {
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.cover-photo {
+    height: 180px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    position: relative;
+}
+
+.profile-info {
+    padding: 0 25px 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    border: 5px solid var(--bg-color);
+    margin-top: -75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--text-light);
+    position: relative;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.profile-details {
+    padding: 20px 0 0 20px;
+    flex-grow: 1;
+}
+
+.profile-details h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.profile-details p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.profile-header .btn-primary {
+    margin-left: auto;
+    align-self: center;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: #FFD700;
+    margin-right: 5px;
+}
+
+.stars i {
+    font-size: 0.9rem;
+}
+
+.rating span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Statistiques utilisateur */
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0 25px 25px;
+}
+
+.stat-box {
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Onglets de profil */
+.profile-tabs {
+    display: flex;
+    overflow-x: auto;
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.profile-tab {
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.profile-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.profile-tab:not(.active):hover {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Contenu des onglets */
+.tab-content {
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Filtres d'annonces */
+.listing-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    background-color: var(--bg-light);
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.filter-btn:not(.active):hover {
+    background-color: rgba(93, 92, 222, 0.1);
+}
+
+/* Grille d'annonces */
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.listing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.listing-image {
+    width: 100%;
+    height: 180px;
+    background-color: var(--bg-light);
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.listing-image img.listing-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative; 
+    z-index: 0;
+}
+
+.listing-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05); /* léger filtre gris */
+    z-index: 1; 
+}
+
+/* BADGE au-dessus de tout */
+.listing-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 3; /* très important */
+}
+
+
+
+
+.listing-badge.active {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.listing-badge.completé {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.listing-badge.service {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.listing-badge.refusé {
+    background-color: var(--text-light);
+    color: white;
+}
+.listing-badge.inactive {
+    background-color: var(--text-light);
+    color: white;
+}
+
+/* STATS par-dessus l’image et le filtre */
+.listing-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 15px 10px 5px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; /* entre le filtre et le badge */
+}
+
+.listing-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.listing-title-row h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+.listing-price {
+    font-weight: 700;
+    color: var(--success-color);
+}
+
+.listing-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.listing-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.listing-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.favorite-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 5;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.favorite-badge img {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+.action-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#profileImage {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.form-group img {
+    transition: 0.3s ease;
+}
+
+.form-group img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+.action-btn.edit:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.action-btn.pause:hover {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.action-btn.delete:hover {
+    background-color: var(--error-color);
+    color: white;
+}
+
+/* Section des avis */
+.reviews-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.reviews-summary {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.overall-rating {
+    margin-bottom: 20px;
+}
+
+.rating-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.reviews-count {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: block;
+    margin-top: 10px;
+}
+
+.rating-breakdown {
+    text-align: left;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.rating-bar span {
+    width: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #e0e0e0;
+    margin: 0 10px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.review {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: var(--radius);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+}
+
+.reviewer .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-right: 10px;
+}
+
+.reviewer h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.reviewer .stars {
+    font-size: 0.8rem;
+}
+
+.review-info {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.review-date {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.review-product {
+    font-style: italic;
+}
+
+.review-content {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Section Transactions */
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.transaction-item {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+}
+.transaction-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+.transaction-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* Section Paramètres */
+.settings-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-tabs {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+.settings-tab {
+    padding: 12px 20px;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.settings-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.settings-tab:not(.active):hover {
+    color: var(--text-color);
+}
+
+.settings-pane {
+    display: none;
+}
+
+.settings-pane.active {
+    display: block;
+}
+
+.settings-pane h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.input-addon {
+    display: flex;
+}
+
+.input-addon input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-addon button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .reviews-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .rating-breakdown {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-details {
+        padding: 15px 0;
+    }
+    
+    .profile-header .btn-primary {
+        margin: 10px 0 0;
+    }
+    
+    .settings-tabs {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .listing-image {
+        height: 150px;
+    }
+    
+    .listing-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .tab-content {
+        padding: 15px;
+    }
+    
+    .profile-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+.leave-review {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+}
+
+.review-form .form-group {
+    margin-bottom: 15px;
+}
+
+.review-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.review-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.review-form button:hover {
+    background-color: var(--primary-dark);
+}

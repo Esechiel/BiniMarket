@@ -1,0 +1,87 @@
+/* dashboard.css */
+
+/* BODY spécifique au dashboard */
+body.dashboard {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/* === CONTENU DU DASHBOARD === */
+
+
+.dashboard h1 {
+    color: #1a237e;
+    margin-bottom: 30px;
+}
+
+.dashboard .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dashboard .card {
+    background-color: #34495e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.dashboard .card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard .card-icon {
+    font-size: 2.8rem;
+    margin-right: 15px;
+}
+
+.dashboard .card-details h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.dashboard .card-details p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+.dashboard .bg-primary {
+    background-color: #1a237e;
+}
+
+.dashboard .bg-success {
+    background-color: #2e7d32;
+}
+
+.dashboard .bg-warning {
+    background-color: #e67e22;
+}
+
+.dashboard .bg-rapport {
+    background-color: #574cba;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .dashboard .content {
+        margin-top: 20px;
+    }
+}

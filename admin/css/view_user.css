@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b1c3b;
+    color: white;
+}
+
+.main-content {
+    margin-left: 250px; /* Adapter si ton sidebar a une autre largeur */
+    padding: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.profile-box {
+    background-color: #12264d;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.profile-box h2 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1e4b8b;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.profile-box p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.profile-box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
